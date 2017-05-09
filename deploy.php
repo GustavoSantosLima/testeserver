@@ -7,17 +7,17 @@ require 'recipe/common.php';
 set('ssh_type', 'native');
 set('ssh_multiplexing', true);
 
-set('repository', 'git@github.com:GustavoSantosLima/confphprs-calculator.git');
+set('repository', 'git@github.com:GustavoSantosLima/testeserver.git');
 set('shared_files', []);
 set('shared_dirs', []);
 set('writable_dirs', []);
 
 // Servers
 
-server('production', 'domain.com')
-    ->user('username')
+server('production', '45.55.252.229')
+    ->user('root')
     ->identityFile()
-    ->set('deploy_path', '/var/www/domain.com');
+    ->set('deploy_path', '/var/www/html');
 
 
 // Tasks
