@@ -14,7 +14,7 @@ set('writable_dirs', []);
 
 // Servers
 
-server('production', '45.55.252.229')
+server('production', '45.55.252.229', 22)
     ->user('root')
     ->identityFile()
     ->set('deploy_path', '/var/www/html');
@@ -29,6 +29,12 @@ task('php-fpm:restart', function () {
     run('sudo systemctl restart php-fpm.service');
 });
 after('deploy:symlink', 'php-fpm:restart');
+
+/*Tarefas que não funcionam*/
+task('deploy:writable', function(){});
+task('deploy:vendors', function(){});
+task('deploy:shared', function(){});
+/*Fim tarefas que não funcionam*/
 
 desc('Deploy your project');
 task('deploy', [
