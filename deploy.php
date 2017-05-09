@@ -17,7 +17,7 @@ set('writable_dirs', []);
 server('production', '45.55.252.229', 22)
     ->user('root')
     ->identityFile()
-    ->set('deploy_path', '/var/www/html');
+    ->set('deploy_path', '/var/www/html/site');
 
 
 // Tasks
