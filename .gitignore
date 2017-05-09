@@ -1,6 +1,2 @@
 # Created by .ignore support plugin (hsz.mobi)
-.gitignore
-bin/
-vendor/
 .idea/
-deployer.phar
