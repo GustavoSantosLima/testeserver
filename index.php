@@ -1,2 +1,2 @@
 <?php
-phpinfo();
+echo "<h1>Gustavo</h1>";

@@ -26,9 +26,9 @@ desc('Restart PHP-FPM service');
 task('php-fpm:restart', function () {
     // The user must have rights for restart service
     // /etc/sudoers: username ALL=NOPASSWD:/bin/systemctl restart php-fpm.service
-    run('sudo systemctl restart php-fpm.service');
+    run('sudo systemctl restart php7.0-fpm.service');
 });
-after('deploy:symlink', 'php-fpm:restart');
+after('deploy:symlink', 'systemctl restart php7.0-fpm');
 
 /*Tarefas que não funcionam*/
 task('deploy:writable', function(){});
