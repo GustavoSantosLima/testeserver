@@ -7,7 +7,7 @@ require 'recipe/common.php';
 set('ssh_type', 'native');
 set('ssh_multiplexing', true);
 
-set('repository', 'git@domain.com:GustavoSantosLima/testeserver.git');
+set('repository', 'git@github.com:GustavoSantosLima/testeserver.git');
 set('shared_files', []);
 set('shared_dirs', []);
 set('writable_dirs', []);
@@ -28,7 +28,7 @@ task('php-fpm:restart', function () {
     // /etc/sudoers: username ALL=NOPASSWD:/bin/systemctl restart php-fpm.service
     run('sudo systemctl restart php7.0-fpm.service');
 });
-after('deploy:symlink', 'systemctl restart php7.0-fpm');
+after('deploy:symlink', 'php-fpm:restart');
 
 /*Tarefas que não funcionam*/
 task('deploy:writable', function(){});
