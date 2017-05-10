@@ -31,9 +31,7 @@ task('php-fpm:restart', function () {
 after('deploy:symlink', 'php-fpm:restart');
 
 /*Tarefas que não funcionam*/
-task('deploy:writable', function(){});
 task('deploy:vendors', function(){});
-task('deploy:shared', function(){});
 /*Fim tarefas que não funcionam*/
 
 desc('Deploy your project');
